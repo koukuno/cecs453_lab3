@@ -21,14 +21,15 @@ class AffirmationsApp extends StatelessWidget {
 
 class AffirmationCard extends StatelessWidget {
   final String imagePath;
+  final String imageLabel;
   final String message;
 
-  const AffirmationCard({super.key, required this.imagePath, required this.message});
+  const AffirmationCard({super.key, required this.imagePath, required this.imageLabel, required this.message});
 
   @override
   Widget build(BuildContext context) {
     return Card(child: Column(children: [
-      Image(image: AssetImage(imagePath)),
+      Image(image: AssetImage(imagePath), semanticLabel: imageLabel),
       Text(message),
     ]));
   }
@@ -41,7 +42,7 @@ class AffirmationsHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var cards = <AffirmationCard>[];
     for (var i = 0; i < 10; ++i) {
-      cards.add(AffirmationCard(imagePath: "assets/test.png", message: "Test Message $i"));
+      cards.add(AffirmationCard(imagePath: "assets/test.png", imageLabel: "test", message: "Test Message $i"));
     }
 
     return ListView(children: cards);
