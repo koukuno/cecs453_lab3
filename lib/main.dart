@@ -45,6 +45,8 @@ class AffirmationsHomePage extends StatelessWidget {
       cards.add(AffirmationCard(imagePath: "assets/test.png", imageLabel: "test", message: "Test Message $i"));
     }
 
-    return ListView(children: cards);
+    return Scaffold(
+      body: ListView(children: cards),
+    );
   }
 }
