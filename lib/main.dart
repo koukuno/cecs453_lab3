@@ -28,7 +28,9 @@ class AffirmationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(child: Column(children: [
+    // clipBehavior needed so the image in the card looks like it fits
+    // in the card rather than being on top of it
+    return Card(clipBehavior: Clip.antiAlias, child: Column(children: [
       Image(image: AssetImage(imagePath), semanticLabel: imageLabel),
       Text(message),
     ]));
