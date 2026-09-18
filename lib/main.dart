@@ -32,7 +32,7 @@ class AffirmationCard extends StatelessWidget {
     // in the card rather than being on top of it
     return Card(clipBehavior: Clip.antiAlias, child: Column(children: [
       Image(image: AssetImage(imagePath), semanticLabel: imageLabel),
-      Text(message),
+      Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 10.0), child: Text(message, style: TextStyle(fontSize: 16.0))),
     ]));
   }
 }
