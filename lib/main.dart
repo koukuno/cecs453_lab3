@@ -42,13 +42,13 @@ class AffirmationsHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var cards = <AffirmationCard>[];
-    for (var i = 0; i < 10; ++i) {
-      cards.add(AffirmationCard(imagePath: "assets/test.png", imageLabel: "test", message: "Test Message $i"));
-    }
-
     return Scaffold(
-      body: ListView(children: cards),
+      body: ListView(children: [
+        AffirmationCard(imagePath: "assets/images/birds.jpg", imageLabel: "Birds on a tree", message: "Autumn is here"),
+        AffirmationCard(imagePath: "assets/images/cat_sleep.jpg", imageLabel: "Cat sleeping", message: "Get a good night's sleep for the next day"),
+        AffirmationCard(imagePath: "assets/images/rocky_beach.jpg", imageLabel: "A rocky beach along the Pacific Ocean", message: "There is always room for improvement"),
+        AffirmationCard(imagePath: "assets/images/trees.jpg", imageLabel: "Trees in the evening", message: "Take breaks and relax"),
+      ]),
     );
   }
 }
